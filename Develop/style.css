@@ -30,6 +30,10 @@ textarea {
   border-radius: 15px;
 }
 
+.form-control{
+  height:100%;
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;
