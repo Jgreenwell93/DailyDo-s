@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var currentHour=moment().format("hA"); 
     var hour=$(".hour");
-    // console.log(hour);
     var i=0;
     
     
@@ -28,7 +27,6 @@ $(document).ready(function(){
     function saveInfo(){
         var todo=($(this).parent().parent().find("span").text());
         console.log(todo);
-        // console.log($(this).parent().parent().find(".todo-task").val());
         console.log($(this).parent().siblings(".todo-task").val());
         var task=$(this).parent().siblings(".todo-task").val();
         localStorage.setItem(todo, task);
