@@ -1,4 +1,5 @@
 # DailyDo-s
+https://jgreenwell93.github.io/DailyDo-s/
 Daily Todo List that stores data locally when save is pressed
 also color codes the rows based upon time
 7pm and 8pm only added for screenshots to display the color coding efect due to my current local time
