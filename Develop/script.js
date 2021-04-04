@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    var currentHour=moment().format("hA"); 
-    var hour=$(".hour");
-    var i=0;
+    var currentHour=moment().format("H"); 
+    console.log(currentHour);
+    var inputBody=$(".todo-task")
     
     
     // Setting the date in the head
@@ -9,17 +9,17 @@ $(document).ready(function(){
     $("#currentDay").text(today.format("MMMM Do, YYYY"));
     
     
-    hour.each(function(){
-        var elementHour=parseInt($(this).data("hour"))
-        console.log(typeof elementHour);
-        if(hour.text ===currentHour){
-            hour.addClass(".present") 
+    inputBody.each(function(){
+        var elementHour=($(this).data("hour"))
+        console.log(elementHour);
+        if(elementHour ===currentHour){
+            $(this).addClass("present"); 
 
-            }else if(hour.text > currentHour){
-            hour.addClass(".future") 
+            }else if(elementHour > currentHour){
+            $(this).addClass("future"); 
 
-            }else if(hour.text < currentHour){
-            hour.addClass(".past") 
+            }else if(elementHour < currentHour){
+            $(this).addClass("past"); 
 
             };
     });
@@ -27,7 +27,6 @@ $(document).ready(function(){
     function saveInfo(){
         var todo=($(this).parent().parent().find("span").text());
         console.log(todo);
-        console.log($(this).parent().siblings(".todo-task").val());
         var task=$(this).parent().siblings(".todo-task").val();
         localStorage.setItem(todo, task);
     };
