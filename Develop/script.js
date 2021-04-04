@@ -25,7 +25,7 @@ $(document).ready(function(){
     });
     
     function saveInfo(){
-        var todo=($(this).parent().parent().find("span").text());
+        var todo=($(this).parent().parent().find("input").data("hour"));
         console.log(todo);
         var task=$(this).parent().siblings(".todo-task").val();
         localStorage.setItem(todo, task);
