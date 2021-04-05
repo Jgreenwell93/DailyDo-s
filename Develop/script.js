@@ -9,6 +9,7 @@ $(document).ready(function(){
     $("#currentDay").text(today.format("MMMM Do, YYYY"));
     
     
+    // checks the hour of the row and color codes it in relation to the current time
     inputBody.each(function(){
         var elementHour=($(this).data("hour"))
         console.log(elementHour);
@@ -24,12 +25,14 @@ $(document).ready(function(){
             };
     });
     
+    // logs the information in the input box to local storage
     function saveInfo(){
         var todo=($(this).parent().parent().find("input").data("hour"));
         console.log(todo);
         var task=$(this).parent().siblings(".todo-task").val();
         localStorage.setItem(todo, task);
     };
+    // retrieves the saved item for each row from local storage
     function todoUpdate(){
         $("#9AM").val(localStorage.getItem("9"));
         $("#10AM").val(localStorage.getItem("10"));
