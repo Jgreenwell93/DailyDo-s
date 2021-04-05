@@ -13,7 +13,7 @@ $(document).ready(function(){
     inputBody.each(function(){
         var elementHour=($(this).data("hour"))
         console.log(elementHour);
-        if(elementHour ===currentHour){
+        if(elementHour ==currentHour){
             $(this).addClass("present"); 
 
             }else if(elementHour > currentHour){
@@ -44,6 +44,21 @@ $(document).ready(function(){
         $("#4PM").val(localStorage.getItem("16"));
         $("#5PM").val(localStorage.getItem("17"));
     };
+
+    // function todoUpdate(){
+    //     inputBody.each(function(){
+    //         var elementHour=($(this).data("hour"));
+    //         console.log(typeof elementHour);
+    //         var savedText=(localStorage.getItem(elementHour));
+    //         console.log(savedText);
+    //         if(elementHour){
+    //         inputBody.textContent(savedText);
+    //         }else{
+    //             return;
+    //         };
+    //     });
+    // };
+
     todoUpdate();
     
     $(".saveBtn").on("click",saveInfo);
